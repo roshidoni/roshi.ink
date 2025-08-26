@@ -1,29 +1,73 @@
-import { Metadata } from "next"
 
-export const metadata: Metadata = {
-  title: "My Tech Blog | Home",
-  description: "Explore my latest thoughts, tutorials, and insights on web development, technology, and more.",
-}
-
-export default function HomePage() {
+export default function EInkHome() {
 
   return (
-    <section className="w-full py-6 md:py-12 lg:py-16">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-              Welcome to My Blog
-            </h1>
-            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              Explore my latest thoughts, tutorials, and insights on web development, technology, and more.
-            </p>
-          </div>
-        </div>
-        <div className="grid gap-6 py-12 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          
-        </div>
-      </div>
-    </section>
-  )
+    <div className="min-h-screen text-ink-900 antialiased">
+
+
+        <main className="container" role="main">
+            <section className="hero" id="about">
+                <div className="hero-text">
+                    <h1>Hello, I’m Roshi.</h1>
+                    <p>
+                        My Linkedin name is Abdussomad. I am in Software engineering for <b>3 years</b>. I like computers
+                    </p>
+                    <div className="flex gap-2 mt-2">
+                        <a href="https://github.com/roshidoni" className="border border-black px-2 py-1 bg-black text-white">View Github</a>
+                        <a href="https://linkedin.com/in/abdussomad" className="border border-black px-2 py-1 bg-black text-white">View LinkedIn</a>
+                    </div>
+                </div>
+                <div className="hero-illustration">
+                    <img
+                        src="/roshi.webp"
+                        alt="Ink style illustration"
+                        className="select-none"
+                        draggable={false}
+                    />
+                </div>
+            </section>
+
+            <section className="section" id="portfolio">
+                <h2 className="mb-2 border-b border-[var(--muted)]">I make colorful websites too</h2>
+                <div className="portfolio-grid" aria-live="polite">
+                    <div className="portfolio-item">
+                        <div className="project-title">sodiqtech.com</div>
+                        <div className="project-desc">
+                            A performant dashboard with real-time vehicle
+                            tracking and clean UI.
+                        </div>
+                    </div>
+                    <div className="portfolio-item">
+                        <div className="project-title">evrilish.uz</div>
+                        <div className="project-desc">
+                            A minimal blogging platform focused on
+                            typography-first reading experiences.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="section" id="blog">
+                <h2>Latest Posts</h2>
+                <div className="blog-list">
+                    <div className="post">
+                        <a href="#">Designing for Calm: Why Less Is More</a>
+                        <p>A short reflection on quiet digital experiences.</p>
+                    </div>
+                    <div className="post">
+                        <a href="#">The Joy of Monochrome</a>
+                        <p>Exploring design without color distractions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="section" id="contact">
+                <h2>Contact</h2>
+                <p className="muted">
+                    Interested in collaborating? Say hi at <span className="text-black">samadbekmahmudjonov@gmail.com</span>
+                </p>
+            </section>
+        </main>
+    </div>
+  );
 }
