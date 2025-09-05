@@ -19,7 +19,7 @@ export default function EInkHome() {
                 </div>
                 <div className="hero-illustration">
                     <img
-                        src="/roshi.webp"
+                        src="/roshi_ink.webp"
                         alt="Ink style illustration"
                         className="select-none"
                         draggable={false}
@@ -28,7 +28,7 @@ export default function EInkHome() {
             </section>
 
             <section className="section" id="portfolio">
-                <h2 className="mb-2 border-b border-[var(--muted)]">I make colorful websites too</h2>
+                <h2 className="mb-2 border-b border-[var(--muted)]">I made some colorful websites too</h2>
                 <div className="portfolio-grid" aria-live="polite">
                     <div className="portfolio-item">
                         <div className="project-title">sodiqtech.com</div>
