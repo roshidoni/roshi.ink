@@ -2,8 +2,8 @@ import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
 import {Noto_Serif_Georgian} from "next/font/google"
-import {Footer} from "@/components/Footer"
-import { Header } from "@/components/Header"
+import {Footer} from "@/components/footer"
+import { Header } from "@/components/header"
 const notoSerifGeorgian = Noto_Serif_Georgian({ subsets: ["latin"] })
 
 export const metadata: Metadata = {

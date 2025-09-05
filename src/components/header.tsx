@@ -8,7 +8,7 @@ export const Header = () => {
             <Link href="/" className="font-semibold ">Roshi</Link>
             <div className="controls">
                 <div className="nav-links flex" id="navLinks">
-                    <Link href="/bookmarks"><BookmarkIcon/></Link>
+                    <Link href="/bookmarks"><BookmarkIcon/> </Link>
                 </div>
             </div>
         </nav>
