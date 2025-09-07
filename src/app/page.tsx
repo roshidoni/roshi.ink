@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 export default function EInkHome() {
 
@@ -18,10 +19,12 @@ export default function EInkHome() {
                     </div>
                 </div>
                 <div className="hero-illustration">
-                    <img
+                    <Image
                         src="/roshi_ink.webp"
                         alt="Ink style illustration"
                         className="select-none"
+                        width={500}
+                        height={500}
                         draggable={false}
                     />
                 </div>
