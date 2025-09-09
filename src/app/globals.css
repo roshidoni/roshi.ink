@@ -1,11 +1,16 @@
 @import "tailwindcss";
 
+html{
+    overflow-x: hidden;
+    margin-left: calc((100vw - 100%));
+}
 body {
     background-color: rgb(254, 253, 253);
     background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
     color: #2d2d2b;
     font-family: "Georgia", serif;
 }
+
 :root {
     --muted: #8a8a85;
     --accent: #444;
@@ -165,14 +170,14 @@ footer {
     font-size: 0.92rem;
 }
 
-@media (max-width: 720px) {
+/* @media (max-width: 720px) {
     .nav-links {
         display: none;
     }
     .menu-btn {
         display: inline-block;
     }
-}
+} */
 
 @media (min-width: 721px) {
     .menu-btn {

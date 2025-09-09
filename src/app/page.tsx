@@ -4,8 +4,6 @@ export default function EInkHome() {
 
   return (
     <div className="min-h-screen text-ink-900 antialiased">
-
-
         <main className="container" role="main">
             <section className="hero" id="about">
                 <div className="hero-text">
@@ -21,7 +19,7 @@ export default function EInkHome() {
                 <div className="hero-illustration">
                     <Image
                         src="/roshi_ink.webp"
-                        alt="Ink style illustration"
+                        alt="Web Wizard"
                         className="select-none"
                         width={500}
                         height={500}
