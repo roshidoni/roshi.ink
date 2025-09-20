@@ -2,7 +2,6 @@ import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
 import {Noto_Serif_Georgian} from "next/font/google"
-import {Footer} from "@/components/footer"
 import { Header } from "@/components/header"
 const notoSerifGeorgian = Noto_Serif_Georgian({ subsets: ["latin"] })
 
@@ -23,7 +22,6 @@ export default function RootLayout({
         <div className="md:w-[80vw] max-w-[1200px] mx-auto px-6">
         {children}
         </div>
-        <Footer />
       </body>
     </html>
   )

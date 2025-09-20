@@ -4,15 +4,14 @@ import matter from "gray-matter"
 
 const blogDir = path.join(process.cwd(), "src/app/blog")
 
-type blogListResults = {
-    title: "string",
-    date: "string"
+type blogData = {
+    [key: string]: any;
 }
 
 export function getAllPosts() {
     const entries = fs.readdirSync(blogDir, {withFileTypes: true})
-    let filteredEntries: blogListResults[] = []
-    const allEntries: any[] = entries.map((entry)=> {
+    let filteredEntries: blogData[] = []
+    const allEntries: (blogData | null)[] = entries.map((entry)=> {
         let filePath: string;
         let slug: string;
 
