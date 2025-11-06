@@ -4,12 +4,7 @@ export default function BlogPage() {
     const blogList = getAllPosts()
     return (
         <div className="flex flex-col">
-            {blogList.map((blog, id) => 
-                <div key={id}>
-                    hey
-                </div>
-            )
-    }
+            <h1>Hali hich narsa yo</h1>
         </div>
     )
 } 

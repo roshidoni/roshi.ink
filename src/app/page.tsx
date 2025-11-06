@@ -7,9 +7,9 @@ export default function EInkHome() {
         <main className="container" role="main">
             <section className="hero" id="about">
                 <div className="hero-text">
-                    <h1>Hello, I’m Roshi.</h1>
+                    <h1>Hi, I'm Abdussomad</h1>
                     <p>
-                        My Linkedin name is Abdussomad. I am in Software engineering for <b>3 years</b>. I like computers
+                        I am in Software engineering for <b>3 years</b>. I like computers
                     </p>
                     <div className="flex gap-2 mt-2">
                         <a href="https://github.com/roshidoni" className="border border-black px-2 py-1 bg-black text-white">View Github</a>
