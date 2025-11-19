@@ -18,6 +18,12 @@ export default function Bookmarks() {
                 { title: "How To Be Successful", url: "https://blog.samaltman.com/how-to-be-successful" },
             ],
         },
+        {
+          title: "blogs",
+          items: [
+            {title: "leerob.com", url: "https://leerob.com/"}
+          ]
+        }
     ];
 
     return (
