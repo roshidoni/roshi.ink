@@ -1,0 +1,32 @@
+import post from "./metadata.json"
+import { BlogIntro } from "@/components/blog-intro"
+
+export const metadata = {
+  title: post.title,
+  description: post.summary ?? "Notes from my first evening building with Svelte and how it compares to React.",
+}
+
+<BlogIntro title={post.title} date={post.publishedAt} />
+
+Do you know what is the best scam of all time? No, It is not crypto, or "make money online" deals. 
+
+It is **mirror** (also selfie pictures. reflection overall)
+
+Think about it. People have been using mirrors to look good to other people. But, they have never looked what they saw in the mirror. If you do not like what you look like in Pictures, that's why.
+
+## Problem with mirrors
+
+They flip your image horizontally.
+
+Here's what I mean: Stand in front of a mirror and raise your right hand. In the mirror, it appears on the right side. But if someone was standing in front of you, they would see your raised hand on *their* left side. The mirror shows you a flipped version. If you have a mole on the left side of your face, everyone else sees it on the left. But in the mirror? You see it on the right. Your brain has been training on this reversed image for your entire life.
+
+But that's not you. That's not what the world sees.
+
+
+<Image
+  src="https://placehold.co/600x400"
+  alt="Test Image"
+  width={600}
+  height={400}
+  caption="This is a test image with a caption."
+/>

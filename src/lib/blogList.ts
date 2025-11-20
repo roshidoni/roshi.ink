@@ -1,40 +1,60 @@
 import fs from "fs"
 import path from "path"
-import matter from "gray-matter"
-
 const blogDir = path.join(process.cwd(), "src/app/blog")
+const POST_METADATA_FILENAME = "metadata.json"
 
-type blogData = {
+type BlogData = {
+    slug: string;
     [key: string]: any;
+}
+
+function readMetadata(slug: string): BlogData | null {
+    const filePath = path.join(blogDir, slug, POST_METADATA_FILENAME)
+
+    if (!fs.existsSync(filePath)) {
+        return null
+    }
+
+    const fileContents = fs.readFileSync(filePath, "utf8")
+
+    let parsed: Record<string, unknown>
+
+    try {
+        parsed = JSON.parse(fileContents)
+    } catch (error) {
+        throw new Error(`Unable to parse metadata for slug "${slug}": ${(error as Error).message}`)
+    }
+
+    return {
+        slug,
+        ...parsed,
+    }
 }
 
 export function getAllPosts() {
     const entries = fs.readdirSync(blogDir, {withFileTypes: true})
-    let filteredEntries: blogData[] = []
-    const allEntries: (blogData | null)[] = entries.map((entry)=> {
-        let filePath: string;
-        let slug: string;
+    const posts: BlogData[] = []
 
-        if(entry.isDirectory()){
-            filePath = path.join(blogDir, entry.name, "page.mdx")
-            slug = entry.name
-        }
-        else{
-            return null
+    entries.forEach((entry)=> {
+        if (!entry.isDirectory()) {
+            return
         }
 
-        
-        const fileContents = fs.readFileSync(filePath, "utf8")
-        const { data } = matter(fileContents);
-
-        return data
-    })
-    
-    allEntries.forEach(val=> {
-        if(val !== null){
-            filteredEntries.push(val)
+        const metadata = readMetadata(entry.name)
+        if (metadata) {
+            posts.push(metadata)
         }
     })
-    return filteredEntries
 
+    return posts
+}
+
+export function getPostMetadata(slug: string) {
+    const metadata = readMetadata(slug)
+
+    if (!metadata) {
+        throw new Error(`Unable to find blog post for slug "${slug}"`)
+    }
+
+    return metadata
 }
