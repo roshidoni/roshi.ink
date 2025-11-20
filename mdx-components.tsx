@@ -49,6 +49,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     ul: (props) => <UnorderedList {...props} />,
     ol: (props) => <OrderedList {...props} />,
+    a: (props) => <a {...props} target="_blank" rel="noopener noreferrer" className="underline hover:no-underline text-primary font-bold" />,
     Image: MdxImage,
     ...components,
   }

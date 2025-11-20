@@ -1,18 +1,18 @@
-import Image, { type ImageProps } from "next/image"
+import type { ComponentPropsWithoutRef } from "react"
 
-interface MdxImageProps extends ImageProps {
+interface MdxImageProps extends ComponentPropsWithoutRef<"img"> {
     caption?: string
 }
 
 export function MdxImage({ caption, className, alt, ...props }: MdxImageProps) {
     return (
         <figure className={className}>
-            <Image
+            <img
                 className="rounded-lg"
                 alt={alt}
                 {...props}
                 style={{
-                    maxWidth: "100%",
+                    width: "100%",
                     height: "auto",
                     ...props.style,
                 }}
