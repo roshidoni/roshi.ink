@@ -1,12 +1,9 @@
 export default function Bookmarks() {
   const groups: { title: string; items: { title: string; url: string }[] }[] = [
     {
-      title: "tools",
+      title: "VS Code Extensions",
       items: [
-        { title: "WebTL", url: "https://web.dev/" },
-        { title: "Anime.js", url: "https://animejs.com/" },
-        { title: "SVG Logos", url: "https://svgporn.com/" },
-        { title: "Fancy Components", url: "https://fancycomponents.dev/" },
+        { title: "Error Lens", url: "ErrorLens" },
       ],
     },
     {
