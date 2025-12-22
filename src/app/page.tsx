@@ -1,4 +1,5 @@
 import { CareerBar } from "@/components/career-bar";
+import { BASIC_CAREER_DATA } from "@/components/examples/career-bar.example";
 import Image from "next/image";
 
 export default function EInkHome() {
@@ -28,9 +29,9 @@ export default function EInkHome() {
                         />
                     </div>
                 </section>
-                <section>
-                    <CareerBar />
-                </section>
+                {/*<section>
+                    <CareerBar segments={BASIC_CAREER_DATA} />
+                </section>*/}
             </main>
         </div>
     );

@@ -1,12 +1,12 @@
-import type React from "react"
-import type { Metadata } from "next"
-import "./globals.css"
-import { Noto_Serif_Georgian } from "next/font/google"
-import { Header } from "@/components/header"
+import type React from "react";
+import type { Metadata } from "next";
+import "./globals.css";
+import { Noto_Serif_Georgian } from "next/font/google";
+import { Header } from "@/components/header";
 
-const notoSerifGeorgian = Noto_Serif_Georgian({ subsets: ["latin"] })
-const siteUrl = "https://roshi.ink"
-const ogImage = `${siteUrl}/roshi_ink.webp`
+const notoSerifGeorgian = Noto_Serif_Georgian({ subsets: ["latin"] });
+const siteUrl = "https://roshi.ink";
+const ogImage = `${siteUrl}/roshi_ink.webp`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -14,15 +14,12 @@ export const metadata: Metadata = {
     default: "roshi.ink | Abdussomad Mahmud",
     template: "%s | roshi.ink",
   },
-  description:
-    "Roshi Ink is Abdussomad Mahmud’s calm corner of the internet—showcasing thoughtful software engineering, high-signal bookmarks, and essays about building resilient web experiences.",
+  description: "Roshi's blog",
   keywords: [
     "Roshi Ink",
     "roshi.ink",
     "Abdussomad Mahmud",
     "software engineer",
-    "Next.js developer",
-    "frontend engineer Uzbekistan",
   ],
   authors: [{ name: "Abdussomad Mahmud", url: siteUrl }],
   creator: "Abdussomad Mahmud",
@@ -59,7 +56,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.png",
   },
-}
+};
 
 const structuredData = [
   {
@@ -91,12 +88,12 @@ const structuredData = [
       "https://www.linkedin.com/in/abdussomad",
     ],
   },
-]
+];
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -111,5 +108,5 @@ export default function RootLayout({
         />
       </body>
     </html>
-  )
+  );
 }
