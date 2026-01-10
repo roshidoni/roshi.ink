@@ -30,6 +30,10 @@ export default function Bookmarks() {
         title: "VS Code Extensions",
         items: [{ title: "Error Lens" }, { title: "Pretty Typescript Errors" }],
       },
+      {
+        title: "apps",
+        items: [{ title: "spokenly", url: "https://spokenly.app" }],
+      },
     ];
 
   return (
