@@ -45,8 +45,8 @@ export default function Bookmarks() {
           <div key={group.title} className="mt-6">
             <h3 className="mb-2">{group.title}</h3>
             <ul className="space-y-1 list-di">
-              {group.items.map((item) => (
-                <li key={item.url} className="flex items-center gap-2">
+              {group.items.map((item, index) => (
+                <li key={index} className="flex items-center gap-2">
                   {item.url ? (
                     <a
                       href={item.url}

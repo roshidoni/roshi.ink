@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
-html{
+html {
     overflow-x: hidden;
     margin-left: calc((100vw - 100%));
 }
+
 body {
     background-color: rgb(254, 253, 253);
     background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
@@ -28,10 +29,12 @@ body {
     font-weight: 600;
     font-family: var(--font-sans);
 }
+
 .nav-links {
     display: flex;
     gap: 1rem;
 }
+
 .nav-links a {
     color: var(--text);
     text-decoration: none;
@@ -39,6 +42,7 @@ body {
     position: relative;
     padding-bottom: 0.125rem;
 }
+
 .nav-links a::after {
     content: "";
     position: absolute;
@@ -49,6 +53,7 @@ body {
     background: var(--text);
     transition: width 0.28s ease;
 }
+
 .nav-links a:hover::after {
     width: 100%;
 }
@@ -60,27 +65,32 @@ body {
     flex-wrap: wrap;
     margin-top: 2.5rem;
 }
+
 .hero-text {
     flex: 1;
     min-width: 260px;
 }
+
 .hero h1 {
     font-size: clamp(1.8rem, 3.2vw, 2.6rem);
     font-weight: 400;
     margin: 0 0 0.6rem 0;
 }
+
 .hero p {
     max-width: 60ch;
     font-size: 1.05rem;
     color: var(--accent);
     margin: 0;
 }
+
 .hero-illustration {
     flex: 1;
     min-width: 260px;
     display: flex;
     justify-content: center;
 }
+
 .hero-illustration img {
     max-width: 100%;
     height: auto;
@@ -90,6 +100,7 @@ body {
 .section {
     margin: 3.2rem 0;
 }
+
 .section h2 {
     font-family: var(--font-sans);
     font-size: 1.4rem;
@@ -100,6 +111,7 @@ body {
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
+
 .portfolio-item {
     padding: 1.1rem;
     border-radius: 6px;
@@ -110,15 +122,18 @@ body {
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
 }
+
 .portfolio-item:hover {
     transform: translateY(-4px);
     background: rgba(255, 255, 255, 0.82);
 }
+
 .project-title {
     font-family: var(--font-sans);
     font-weight: 600;
     margin-bottom: 0.4rem;
 }
+
 .project-desc {
     color: var(--muted);
     font-size: 0.95rem;
@@ -128,16 +143,19 @@ body {
     display: grid;
     gap: 1rem;
 }
+
 .post {
     padding: 0.9rem 0;
     border-top: 1px solid var(--muted);
 }
+
 .post a {
     text-decoration: none;
     color: var(--text);
     font-family: var(--font-sans);
     font-weight: 600;
 }
+
 .post p {
     margin: 0.35rem 0 0 0;
     color: var(--muted);
@@ -149,6 +167,7 @@ body {
     gap: 0.6rem;
     align-items: center;
 }
+
 .toggle {
     font-family: var(--font-sans);
     font-size: 0.9rem;
@@ -158,6 +177,7 @@ body {
     border-radius: 6px;
     background: transparent;
 }
+
 .toggle:active {
     transform: translateY(1px);
 }
@@ -168,6 +188,91 @@ footer {
     padding: 1.6rem 0;
     color: var(--muted);
     font-size: 0.92rem;
+}
+
+.survey {
+    min-height: calc(100vh - 220px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0 4rem;
+}
+
+.survey-panel {
+    width: min(560px, 100%);
+    text-align: center;
+}
+
+.survey-panel h1 {
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    margin-bottom: 0.4rem;
+}
+
+.survey-panel p {
+    margin-top: 0;
+}
+
+.survey-form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.survey-input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: 0;
+    border: 1px solid var(--text);
+    background: rgba(255, 255, 255, 0.75);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.survey-input::placeholder {
+    color: var(--muted);
+}
+
+.survey-input:focus {
+    outline: none;
+    border-color: #1f1f1c;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.survey-button {
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
+    padding: 0.75rem 1.6rem;
+    border-radius: 0;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.survey-button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.survey-button:active {
+    transform: translateY(1px);
+}
+
+.survey-status {
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    margin: 0;
+    color: var(--accent);
+}
+
+.survey-status.is-error {
+    color: #7a2323;
 }
 
 /* @media (max-width: 720px) {
@@ -206,6 +311,7 @@ footer {
     line-height: 1.85;
     color: var(--text);
 }
+
 .mdx-article h1,
 .mdx-article h2,
 .mdx-article h3 {
@@ -214,27 +320,57 @@ footer {
     margin: 1.6rem 0 0.8rem;
     color: #1f1f1c;
 }
-.mdx-article h1 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); font-weight: 600; }
-.mdx-article h2 { font-size: clamp(1.4rem, 2.6vw, 1.8rem); font-weight: 600; }
-.mdx-article h3 { font-size: 1.15rem; font-weight: 600; }
 
-.mdx-article p { margin: 0.9rem 0; }
-.mdx-article a { color: #0f172a; text-decoration: underline; text-underline-offset: 2px; }
-.mdx-article strong { font-weight: 600; }
-.mdx-article em { font-style: italic; }
+.mdx-article h1 {
+    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+    font-weight: 600;
+}
+
+.mdx-article h2 {
+    font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+    font-weight: 600;
+}
+
+.mdx-article h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.mdx-article p {
+    margin: 0.9rem 0;
+}
+
+.mdx-article a {
+    color: #0f172a;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.mdx-article strong {
+    font-weight: 600;
+}
+
+.mdx-article em {
+    font-style: italic;
+}
 
 .mdx-article ul,
 .mdx-article ol {
     padding-left: 1.25rem;
     margin: 0.8rem 0;
 }
+
 .mdx-article ul {
     list-style-type: disc;
 }
+
 .mdx-article ol {
     list-style-type: decimal;
 }
-.mdx-article li { margin: 0.35rem 0; }
+
+.mdx-article li {
+    margin: 0.35rem 0;
+}
 
 .mdx-article blockquote {
     border-left: 3px solid var(--muted);
@@ -253,6 +389,15 @@ footer {
     height: auto;
 }
 
+.mdx-article img {
+    filter: grayscale(1) contrast(1.6);
+    transition: filter 200ms ease;
+}
+
+.mdx-article img:hover {
+    filter: none;
+}
+
 .mdx-article pre {
     background: #f6f6f6;
     border: 1px solid #e7e7e7;
@@ -260,6 +405,7 @@ footer {
     padding: 0.9rem 1rem;
     overflow: auto;
 }
+
 .mdx-article code {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     font-size: 0.92em;
