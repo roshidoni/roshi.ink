@@ -27,7 +27,7 @@ export function SurveyForm({ action, initialState }: SurveyFormProps) {
   const [state, formAction] = useActionState(action, initialState);
 
   return (
-    <form className="survey-form" action={formAction}>
+    <form className="survey-form w-full" action={formAction}>
       <label className="sr-only" htmlFor="survey-message">
         Message
       </label>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SurveyForm } from "./survey-form";
+import Image from "next/image";
 
 type SurveyState = {
   status: "idle" | "success" | "error";
@@ -73,9 +74,9 @@ async function sendSurvey(
 export default function SurveyPage() {
   return (
     <main className="container survey" role="main">
-      <section className="survey-panel" aria-label="Survey">
-        <h1>Leave a note</h1>
-        <p className="muted">A single sentence is perfect.</p>
+      <section className="survey-panel flex flex-col items-center" aria-label="Survey">
+        <h1>What should I name this?</h1>
+        <Image src="/quote.jpeg" alt="Quote" width={300} height={300} />
         <SurveyForm action={sendSurvey} initialState={initialState} />
       </section>
     </main>
