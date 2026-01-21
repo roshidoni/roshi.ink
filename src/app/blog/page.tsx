@@ -2,7 +2,18 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/blogList";
 
 export default function BlogPage() {
-  const blogList = getAllPosts();
+  const blogList = getAllPosts()
+    .slice()
+    .sort((a, b) => {
+      const aDate =
+        (a.date as string | undefined) ?? (a.publishedAt as string | undefined);
+      const bDate =
+        (b.date as string | undefined) ?? (b.publishedAt as string | undefined);
+      const aTime = aDate ? new Date(aDate).getTime() : 0;
+      const bTime = bDate ? new Date(bDate).getTime() : 0;
+
+      return bTime - aTime;
+    });
   return (
     <section className="flex flex-col space-y-8">
       <header className="space-y-2">

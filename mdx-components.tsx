@@ -1,6 +1,7 @@
 import type { MDXComponents } from "mdx/types"
 import type { ComponentPropsWithoutRef, CSSProperties } from "react"
 import { MdxImage } from "./src/components/mdx-image"
+import { Terminal } from "./src/components/terminal"
 
 const baseListSpacing: CSSProperties = {
   paddingInlineStart: "1.25rem",
@@ -51,6 +52,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ol: (props) => <OrderedList {...props} />,
     a: (props) => <a {...props} target="_blank" rel="noopener noreferrer" className="underline hover:no-underline text-primary font-bold" />,
     Image: MdxImage,
+    Terminal,
     ...components,
   }
 }

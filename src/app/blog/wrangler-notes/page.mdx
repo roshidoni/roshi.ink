@@ -1,0 +1,33 @@
+import post from "./metadata.json"
+import { BlogIntro } from "@/components/blog-intro"
+
+export const metadata = {
+  title: post.title,
+  description: post.summary ?? "A practical take on Wrangler and how it fits into my deploy loop.",
+}
+
+<BlogIntro title={post.title} summary={post.summary} date={post.publishedAt} />
+
+I think, almost every newcomer to programming wants to see their live on the internet and show off to other people. But most of the bootcamps (no need to mention universities) take too long to teach their students how to [deploy](https://en.wikipedia.org/wiki/Software_deployment) their website. They don't need to learn library or frameworks (like react.js, next.js, vue...). You can just put your html file online and everyone can see it.
+
+Whether you are student or a teacher, this will be helpful. Let's put your project online for free.
+
+## Pre-requirements
+You have your html, css, js project ready, we will need [Node.js](https://nodejs.org/en/download). 
+
+That's it. we are now gonna deploy 🚀 our website to Cloudflare using wrangler.
+
+## Deployment steps
+
+### 1. Open project folder with terminal
+
+You already created html, css, javascript project. Now, you should **open that project location with your terminal** `>_`
+
+<Terminal title="project-folder">
+```bash
+cd ~/projects/my-website
+ls
+```
+</Terminal>
+
+[Macos](https://www.youtube.com/watch?v=ojJ4UJJ4GzE), [Windows](https://www.youtube.com/watch?v=L2Y83ttDf_Q), Linux - You know how to do

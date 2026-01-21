@@ -1,6 +1,37 @@
-import { CareerBar } from "@/components/career-bar";
-import { BASIC_CAREER_DATA } from "@/components/examples/career-bar.example";
+import { ExperienceSegmentBar } from "@/components/experience-segment-bar";
+import type { CareerSegment } from "@/lib/career-bar.types";
 import Image from "next/image";
+
+const EXPERIENCE_SEGMENTS: CareerSegment[] = [
+    {
+        start: "2021-01",
+        end: "2022-04",
+        label: "Studio Nox",
+        role: "Junior Engineer",
+        color: "#6b7280",
+    },
+    {
+        start: "2022-05",
+        end: "2023-02",
+        label: "Northlight Labs",
+        role: "Frontend Engineer",
+        color: "#64748b",
+    },
+    {
+        start: "2023-03",
+        end: "2024-01",
+        label: "Roshi Ink",
+        role: "Product Engineer",
+        color: "#475569",
+    },
+    {
+        start: "2024-02",
+        end: "Present",
+        label: "Launchpad",
+        role: "Senior Engineer",
+        color: "#1f2937",
+    },
+];
 
 export default function EInkHome() {
 
@@ -29,9 +60,9 @@ export default function EInkHome() {
                         />
                     </div>
                 </section>
-                {/*<section>
-                    <CareerBar segments={BASIC_CAREER_DATA} />
-                </section>*/}
+                <section className="mt-12">
+                    <ExperienceSegmentBar segments={EXPERIENCE_SEGMENTS} />
+                </section>
             </main>
         </div>
     );

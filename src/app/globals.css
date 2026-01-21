@@ -406,6 +406,70 @@ footer {
     overflow: auto;
 }
 
+.mdx-terminal {
+    border: 1px solid #dfded7;
+    border-radius: 8px;
+    background: #f7f6f2;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(25, 25, 20, 0.08);
+    margin: 1.2rem 0;
+}
+
+.mdx-terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.45rem 0.8rem;
+    background: #efeee8;
+    border-bottom: 1px solid #e0dfd7;
+    font-family: var(--font-sans);
+}
+
+.mdx-terminal-dots {
+    display: inline-flex;
+    gap: 0.35rem;
+}
+
+.mdx-terminal-dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    display: inline-block;
+    background: #cfcfc7;
+}
+
+.mdx-terminal-dot:nth-child(1) {
+    background: #f06b59;
+}
+
+.mdx-terminal-dot:nth-child(2) {
+    background: #f0bf4a;
+}
+
+.mdx-terminal-dot:nth-child(3) {
+    background: #58c27b;
+}
+
+.mdx-terminal-title {
+    color: var(--muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.mdx-terminal-body {
+    padding: 0.9rem 1rem;
+    background: #f6f6f6;
+    overflow: auto;
+}
+
+.mdx-terminal pre {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
 .mdx-article code {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     font-size: 0.92em;
