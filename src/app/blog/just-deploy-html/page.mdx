@@ -4,6 +4,20 @@ import { BlogIntro } from "@/components/blog-intro"
 export const metadata = {
   title: post.title,
   description: post.summary ?? "A practical take on Wrangler and how it fits into my deploy loop.",
+  openGraph: {
+    images: [
+      {
+        url: "https://v1plzy848idikmzs.public.blob.vercel-storage.com/just-deploy-html-og",
+      },
+    ],
+  },
+  twitter: {
+    images: [
+      {
+        url: "https://v1plzy848idikmzs.public.blob.vercel-storage.com/just-deploy-html-og",
+      },
+    ],
+  },
 }
 
 <BlogIntro title={post.title} summary={post.summary} date={post.publishedAt} />
