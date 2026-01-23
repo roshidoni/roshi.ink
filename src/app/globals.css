@@ -25,6 +25,10 @@ body {
 .border-ink-700{ border-color: #22222a; }
 .accent-ink-700{ accent-color: #22222a; } */
 
+/* ------------------------------ */
+/* Index page styles */
+/* ------------------------------ */
+
 .brand {
     font-weight: 600;
     font-family: var(--font-sans);
@@ -94,7 +98,7 @@ body {
 .hero-illustration img {
     max-width: 100%;
     height: auto;
-    filter: grayscale(100%) contrast(1.2);
+    filter: grayscale(100%) contrast(1.2) brightness(1) saturate(0);
 }
 
 .section {
@@ -302,7 +306,7 @@ footer {
 }
 
 /* ------------------------------ */
-/* Blog post typography (.mdx-article)  */
+/* MDX styles */
 /* ------------------------------ */
 .mdx-article {
     max-width: 70ch;
@@ -390,12 +394,16 @@ footer {
 }
 
 .mdx-article img {
-    filter: grayscale(1) contrast(1.6);
+    filter: grayscale(100%) contrast(1.2) brightness(1) saturate(0);
     transition: filter 200ms ease;
 }
 
 .mdx-article img:hover {
     filter: none;
+}
+
+.mdx-article iframe {
+    border-radius: 6px;
 }
 
 .mdx-article pre {
@@ -463,6 +471,31 @@ footer {
     overflow: auto;
 }
 
+.mdx-terminal-commands {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.92em;
+    color: var(--text);
+}
+
+.mdx-terminal-command {
+    position: relative;
+    padding-left: 1.1rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.mdx-terminal-command::before {
+    content: "$";
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+    user-select: none;
+    pointer-events: none;
+}
+
 .mdx-terminal pre {
     margin: 0;
     padding: 0;
@@ -470,9 +503,16 @@ footer {
     background: transparent;
 }
 
+/* MDX inline code styles */
 .mdx-article code {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     font-size: 0.92em;
+}
+
+.mdx-article :not(pre) > code {
+    background: rgba(15, 23, 42, 0.08);
+    border-radius: 4px;
+    padding: 0.15em 0.35em;
 }
 
 .mdx-article hr {

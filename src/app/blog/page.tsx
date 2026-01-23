@@ -17,10 +17,9 @@ export default function BlogPage() {
   return (
     <section className="flex flex-col space-y-8">
       <header className="space-y-2">
-        <p className="text-sm uppercase tracking-widest text-muted-foreground">
-          Blog
-        </p>
-        <h1 className="text-3xl font-semibold">Writing Experiments</h1>
+        <h1 className="text-3xl font-semibold tracking-widest text-muted-foreground">
+          BLOG POSTS
+        </h1>
       </header>
 
       {blogList.length === 0 ? (

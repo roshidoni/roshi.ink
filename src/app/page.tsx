@@ -42,7 +42,7 @@ export default function EInkHome() {
                     <div className="hero-text">
                         <h1>Hi, I'm Abdussomad</h1>
                         <p>
-                            I am in Software engineering for <b>3 years</b>. I like computers
+                            I am 19 and have been programming for <b>3 years</b>. <br /> I like computers.
                         </p>
                         <div className="flex gap-2 mt-2">
                             <a href="https://github.com/roshidoni" className="border border-black px-2 py-1 bg-black text-white">View Github</a>
@@ -60,9 +60,9 @@ export default function EInkHome() {
                         />
                     </div>
                 </section>
-                <section className="mt-12">
+                {/*<section className="mt-12">
                     <ExperienceSegmentBar segments={EXPERIENCE_SEGMENTS} />
-                </section>
+                </section>*/}
             </main>
         </div>
     );

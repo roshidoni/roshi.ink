@@ -32,7 +32,7 @@ export default function Bookmarks() {
       },
       {
         title: "apps",
-        items: [{ title: "spokenly", url: "https://spokenly.app" }],
+        items: [{ title: "Spokenly", url: "https://spokenly.app" }, { title: "Habitify", url: "https://habitify.me" }],
       },
     ];
 

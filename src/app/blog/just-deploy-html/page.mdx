@@ -1,0 +1,43 @@
+import post from "./metadata.json"
+import { BlogIntro } from "@/components/blog-intro"
+
+export const metadata = {
+  title: post.title,
+  description: post.summary ?? "A practical take on Wrangler and how it fits into my deploy loop.",
+}
+
+<BlogIntro title={post.title} summary={post.summary} date={post.publishedAt} />
+
+Almost every newcomer to programming wants to see their little website live on the internet and show off to other people. But most of the bootcamps (no need to mention universities) take too long to teach their students how to [deploy](https://en.wikipedia.org/wiki/Software_deployment) their website. You don't need to learn library or frameworks (like react.js, next.js, vue...). You can just put your html file online and everyone can see it.
+
+Whether you are a student or a teacher, this will be helpful. Let's put your project online.
+
+## Deployment
+### Pre-requirement
+
+Got an HTML project (maybe has css and js) sitting on your computer? Cool. Install [Node.js](https://nodejs.org/en/download) if you haven't already (takes 2 minutes). That's literally all you need.
+
+### 1. Open project folder with terminal and deploy
+
+If you are a beginner, don't panic. terminal doesn't bite you. Just learn how to **open your project on terminal**: [macOS](https://www.youtube.com/watch?v=ojJ4UJJ4GzE), [Windows](https://www.youtube.com/watch?v=L2Y83ttDf_Q), Linux - You know how to do
+
+Type these 2 commands and your project is online:
+
+<Terminal
+  title="~/project-folder"
+  commands={["npx wrangler login", "npx wrangler pages deploy ."]}
+/>
+
+First command throw you to a browser asking you to login to your Cloudflare account. Second command actually deploys your project to one domain. I did a little video of deploying process down here. You can open your project on terminal and follow the video.
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/rrpEGe-nU_M?si=H7NJtI4ueTwaeT8J&rel=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+
+If you want to update the website, update it and re-run `npx wrangler pages deploy .`
+
+---
+Congratulations. You now have a program running online that you can share. 
+
+If you began programming recently and successfully put your html website online, I am happy for you. But do not stop here. There are so many things to explore in the future. Yes, I said this in the beginning:
+> You don't need to learn library or frameworks (like react.js, next.js, vue...).
+
+But, it doesn't mean you should not learn these. They make it easy for you to make powerful applications in the future. Peace ✌️.

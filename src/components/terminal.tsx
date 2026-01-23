@@ -1,12 +1,10 @@
-import type { ReactNode } from "react"
-
 interface TerminalProps {
     title?: string
-    children: ReactNode
+    commands?: string[]
     className?: string
 }
 
-export function Terminal({ title = "Terminal", children, className }: TerminalProps) {
+export function Terminal({ title = "Terminal", commands = [], className }: TerminalProps) {
     return (
         <div className={className ? `mdx-terminal ${className}` : "mdx-terminal"}>
             <div className="mdx-terminal-header">
@@ -17,7 +15,15 @@ export function Terminal({ title = "Terminal", children, className }: TerminalPr
                 </span>
                 <span className="mdx-terminal-title">{title}</span>
             </div>
-            <div className="mdx-terminal-body">{children}</div>
+            <div className="mdx-terminal-body">
+                <div className="mdx-terminal-commands">
+                    {commands.map((command, index) => (
+                        <div key={`${command}-${index}`} className="mdx-terminal-command">
+                            <span className="mdx-terminal-command-text">{command}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }
