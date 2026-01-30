@@ -1,0 +1,38 @@
+import post from "./metadata.json"
+import { BlogIntro } from "@/components/blog-intro"
+
+export const metadata = {
+  title: post.title,
+  description: post.summary ?? "A practical take on Wrangler and how it fits into my deploy loop."
+}
+
+<BlogIntro title={post.title} summary={post.summary} date={post.publishedAt} />
+
+Reinventing the wheel, just because existing solution was not 100% fit, is quite familiar to engineers. One of the cool things about being a developer is that you don't just build for users, you can also build for yourself. But, of course, time is money (for the ones who have a job). Sometimes, we decide it is not worth to build a tool for ourself, because it might take a long time to build it.
+
+At least, it used to take a lot of our time. Now with AI, You can vibe-code tools (like extensions, bots). For personal tools, perfect code doesn't really matter. And also, you don't always need a polished UI. Sometimes you don't need an UI at all.
+
+# Extensions I made
+
+## 1. FeedBlocker
+
+My first extension Feedblocker is just like that. I don't UI to manage the extension at all. It is just an extension that blocks social media at certain time in some way. Extension: 
+- only allows using Twitter and Linkedin at 19-21PM. 
+- It blocks Feed of Youtube and only allows to watch a video. No feed. 
+- It hides all telegram channels' posts during the weekdays. Only DMs
+
+I do not have to make it a dynamic app for everyone else. All the numbers are hardcoded to an app and designed for my case. Just like that, I made the internet less distracting for me.
+
+## 2. Bluequote
+This one came out for a different reason. I once tried to run my blog on Substack. It was really good platform for writing articles. But they banned me for some reason. 
+ <Image
+   src="https://v1plzy848idikmzs.public.blob.vercel-storage.com/subtack_ban"
+   alt="Substack ban notice"
+   caption=""
+ />
+
+So, I decided to run my blog on roshi.ink. But Substack had really good feature that I missed: Sharing part of the article as an Image quote. I almost fully vibe-coded the extension that makes selected text on the page sharable as an image. And I saw it can be useful for other people also. So, I tweaked the design a little bit and I uploaded to [Chrome Web Store](https://chromewebstore.google.com/detail/bluequote/ijlokiiflchllfijgfjeaiiabaabacad). Now you can download and use if you want. 
+
+---
+
+Go build your tool.
