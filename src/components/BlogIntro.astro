@@ -1,0 +1,34 @@
+---
+interface Props {
+  title: string;
+  summary?: string | null;
+  date?: string | Date | null;
+}
+
+const { title, summary, date } = Astro.props;
+
+const rawDate = typeof date === 'string' || date instanceof Date ? new Date(date) : null;
+const isValidDate = !!rawDate && !Number.isNaN(rawDate.getTime());
+
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+});
+
+const formattedDate = isValidDate ? dateFormatter.format(rawDate!) : null;
+---
+
+<header class="mb-10 space-y-4 border-b border-border pb-2">
+  <div class="space-y-2">
+    <h1 class="font-serif text-3xl font-semibold text-[var(--text)]">{title}</h1>
+    {summary && (
+      <p class="text-base text-muted-foreground">{summary}</p>
+    )}
+  </div>
+  {formattedDate && rawDate && (
+    <time datetime={rawDate.toISOString()} class="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+      {formattedDate}
+    </time>
+  )}
+</header>

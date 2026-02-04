@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+const blogList = await getCollection('blog');
+const sortedPosts = blogList
+  .slice()
+  .sort((a, b) => {
+    const aDate = a.data.date ?? a.data.publishedAt ?? '';
+    const bDate = b.data.date ?? b.data.publishedAt ?? '';
+    const aTime = aDate ? new Date(aDate).getTime() : 0;
+    const bTime = bDate ? new Date(bDate).getTime() : 0;
+    return bTime - aTime;
+  });
+---
+
+<Layout title="Blog">
+  <Header />
+  <div class="md:w-[80vw] max-w-[1200px] mx-auto px-6">
+    <main class="container" role="main">
+      <section class="section" aria-label="Blog posts">
+        <header class="space-y-2 mb-8">
+          <h1 class="text-3xl font-semibold tracking-widest text-muted-foreground">
+            BLOG POSTS
+          </h1>
+        </header>
+
+        {sortedPosts.length === 0 ? (
+          <p class="text-muted-foreground">No posts yet. Check back soon!</p>
+        ) : (
+          <ul class="space-y-4">
+            {sortedPosts.map((post) => {
+              const displayDate = post.data.date ?? post.data.publishedAt;
+              const formattedDate = displayDate
+                ? new Date(displayDate).toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric",
+                  })
+                : null;
+
+              return (
+                <li class="rounded-lg border border-border p-4 transition-colors hover:border-foreground/40">
+                  <a href={`/blog/${post.slug}`} class="block space-y-2">
+                    <div class="flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
+                      <h2 class="text-xl font-semibold">
+                        {post.data.title}
+                      </h2>
+                      {formattedDate && (
+                        <time
+                          datetime={displayDate}
+                          class="text-sm text-muted-foreground md:text-right"
+                        >
+                          {formattedDate}
+                        </time>
+                      )}
+                    </div>
+                    {post.data.summary ? (
+                      <p class="text-muted-foreground">
+                        {post.data.summary}
+                      </p>
+                    ) : (
+                      <p class="text-muted-foreground">
+                        Read the full story →
+                      </p>
+                    )}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </section>
+    </main>
+  </div>
+</Layout>

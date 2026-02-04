@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+const groups = [
+  {
+    title: "articles",
+    items: [
+      {
+        title: "Write Like You Talk",
+        url: "https://www.paulgraham.com/talk.html",
+      },
+      {
+        title: "Single Threaded Leadership",
+        url: "https://fs.blog/single-threaded-leadership/",
+      },
+      {
+        title: "The Day You Became A Better Writer",
+        url: "https://kb.iu.edu/d/bfqu",
+      },
+      {
+        title: "How To Be Successful",
+        url: "https://blog.samaltman.com/how-to-be-successful",
+      },
+    ],
+  },
+  {
+    title: "blogs",
+    items: [{ title: "leerob.com", url: "https://leerob.com/" }],
+  },
+  {
+    title: "VS Code Extensions",
+    items: [{ title: "Error Lens" }, { title: "Pretty Typescript Errors" }],
+  },
+  {
+    title: "apps",
+    items: [{ title: "Spokenly", url: "https://spokenly.app" }, { title: "Habitify", url: "https://habitify.me" }],
+  },
+];
+---
+
+<Layout title="Bookmarks">
+  <Header />
+  <div class="md:w-[80vw] max-w-[1200px] mx-auto px-6">
+    <main class="container" role="main">
+      <section class="section" aria-label="Bookmarks">
+        <h2 class="mb-2">bookmarks</h2>
+
+        {groups.map((group) => (
+          <div class="mt-6">
+            <h3 class="mb-2">{group.title}</h3>
+            <ul class="space-y-1 list-disc pl-4">
+              {group.items.map((item) => (
+                <li class="list-item">
+                  {item.url ? (
+                    <a
+                      href={item.url}
+                      class="underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.title}
+                    </a>
+                  ) : (
+                    <span>{item.title}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+    </main>
+  </div>
+</Layout>

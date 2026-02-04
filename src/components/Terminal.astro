@@ -1,0 +1,29 @@
+---
+interface Props {
+  title?: string;
+  commands?: string[];
+  class?: string;
+}
+
+const { title = "Terminal", commands = [], class: className } = Astro.props;
+---
+
+<div class={className ? `mdx-terminal ${className}` : "mdx-terminal"}>
+  <div class="mdx-terminal-header">
+    <span class="mdx-terminal-dots" aria-hidden="true">
+      <span class="mdx-terminal-dot" />
+      <span class="mdx-terminal-dot" />
+      <span class="mdx-terminal-dot" />
+    </span>
+    <span class="mdx-terminal-title">{title}</span>
+  </div>
+  <div class="mdx-terminal-body">
+    <div class="mdx-terminal-commands">
+      {commands.map((command) => (
+        <div class="mdx-terminal-command">
+          <span class="mdx-terminal-command-text">{command}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

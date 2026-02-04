@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+const EXPERIENCE_SEGMENTS = [
+  {
+    start: "2021-01",
+    end: "2022-04",
+    label: "Studio Nox",
+    role: "Junior Engineer",
+    color: "#6b7280",
+  },
+  {
+    start: "2022-05",
+    end: "2023-02",
+    label: "Northlight Labs",
+    role: "Frontend Engineer",
+    color: "#64748b",
+  },
+  {
+    start: "2023-03",
+    end: "2024-01",
+    label: "Roshi Ink",
+    role: "Product Engineer",
+    color: "#475569",
+  },
+  {
+    start: "2024-02",
+    end: "Present",
+    label: "Launchpad",
+    role: "Senior Engineer",
+    color: "#1f2937",
+  },
+];
+---
+
+<Layout>
+  <Header />
+  <div class="md:w-[80vw] max-w-[1200px] mx-auto px-6">
+    <div class="text-ink-900 antialiased">
+      <main class="container" role="main">
+        <section class="hero" id="about">
+          <div class="hero-text">
+            <h1>Hi, I'm Abdussomad</h1>
+            <p>
+              I am 19 and have been programming for <b>3 years</b>. <br /> I like computers.
+            </p>
+            <div class="flex gap-2 mt-2">
+              <a href="https://github.com/roshidoni" class="border border-black px-2 py-1 bg-black text-white">View Github</a>
+              <a href="https://linkedin.com/in/abdussomad" class="border border-black px-2 py-1 bg-black text-white">View LinkedIn</a>
+            </div>
+          </div>
+          <div class="hero-illustration">
+            <img
+              src="/roshi_ink.webp"
+              alt="Web Wizard"
+              class="select-none"
+              width={500}
+              height={500}
+              draggable={false}
+            />
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</Layout>
