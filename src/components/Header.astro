@@ -3,32 +3,42 @@ const currentPath = Astro.url.pathname;
 const isBookmarks = currentPath.startsWith("/bookmarks");
 ---
 
-<header class="max-w-[900px] w-full mx-auto py-2 px-1 border-b border-[var(--muted)]" role="banner">
-  <nav class="flex justify-between items-center gap-1rem">
-    <a href="/" class="font-semibold">Roshi</a>
-    <div>
-      <div class="nav-links flex" id="navLinks">
-        <a href="/blog">Blog</a>
-        <a href="/bookmarks">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" class="w-6 h-6 cursor-pointer">
-            {isBookmarks ? (
-              <path
-                d="M18 2H6a2 2 0 0 0-2 2v17a1 1 0 0 0 .5.86L12 18.15l7.5 3.71A1 1 0 0 0 20 22V4a2 2 0 0 0-2-2z"
-                fill="currentColor"
-              />
-            ) : (
-              <path
-                d="M12 17L5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17z"
-                fill="none"
-                stroke="currentColor"
-                stroke-width={2}
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            )}
-          </svg>
-        </a>
-      </div>
-    </div>
-  </nav>
+<header
+    class="max-w-[900px] w-full mx-auto py-2 px-1 border-b border-[var(--muted)]"
+    role="banner"
+>
+    <nav class="flex justify-between items-center gap-1rem">
+        <a href="/" class="font-semibold">Roshi</a>
+        <div>
+            <div class="nav-links flex" id="navLinks">
+                <a href="/blog">Blog</a>
+                <a href="/bookmarks">
+                    <svg
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        class="w-6 h-6 cursor-pointer"
+                    >
+                        {
+                            isBookmarks ? (
+                                <path
+                                    d="M18 2H6a2 2 0 0 0-2 2v17a1 1 0 0 0 .5.86L12 18.15l7.5 3.71A1 1 0 0 0 20 22V4a2 2 0 0 0-2-2z"
+                                    fill="currentColor"
+                                />
+                            ) : (
+                                <path
+                                    d="M12 17L5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17z"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width={2}
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            )
+                        }
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
 </header>
